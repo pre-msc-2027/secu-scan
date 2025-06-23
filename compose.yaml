@@ -1,0 +1,44 @@
+services:
+  traefik:
+    image: traefik:latest
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--entrypoints.web.address=:80"
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    networks:
+        - traefik
+
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.frontend.rule=Host(`example.com`)"
+      - "traefik.http.services.frontend.loadbalancer.server.port=3000"
+
+
+networks:
+  traefik:
+    external: true
+
