@@ -1,0 +1,12 @@
+[submodule "frontend"]
+	path = frontend
+	url = git@github.com:pre-msc-2027/frontend.git
+[submodule "analyser"]
+	path = analyser
+	url = git@github.com:pre-msc-2027/analyser.git
+[submodule "server"]
+	path = server
+	url = git@github.com:pre-msc-2027/api.git
+[submodule "ai"]
+	path = ai
+	url = git@github.com:pre-msc-2027/ai.git
