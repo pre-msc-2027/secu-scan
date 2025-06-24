@@ -5,10 +5,10 @@ Germain et Jaures
 ## features
 
 - **CI / CD**
-  - [ ] scripts de build et de test pour les 4 projets
-  - [ ] scans de vulnérabilité trivy
-  - [ ] protection des branches
-  - [ ] dockerfiles
+  - [ x ] scripts de build et de test pour les 4 projets
+  - [ x ] scans de vulnérabilité trivy
+  - [ x ] protection des branches
+  - [x] dockerfiles
   - [ ] monorepo avec submodules
   
 - **Deploiement**
