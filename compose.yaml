@@ -12,6 +12,9 @@ services:
       - "/var/run/docker.sock:/var/run/docker.sock"
     networks:
         - traefik
+    labels:
+      - "traefik.http.routers.dashboard.rule=Host(`traefik.localhost`)"
+      - "traefik.http.routers.dashboard.service=api@internal"
 
   server:
     build:
@@ -28,11 +31,10 @@ services:
       - traefik
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.frontend.rule=Host(`example.com`)"
+      - "traefik.http.routers.frontend.rule=Host(`traefik.localhost`)"
       - "traefik.http.services.frontend.loadbalancer.server.port=3000"
 
 
 networks:
   traefik:
-    external: true
 
