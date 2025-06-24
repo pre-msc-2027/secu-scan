@@ -13,15 +13,9 @@ services:
     networks:
         - traefik
 
-
   server:
     build:
       context: ./server
-      dockerfile: Dockerfile
-
-  api:
-    build:
-      context: ./api
       dockerfile: Dockerfile
 
   frontend:
