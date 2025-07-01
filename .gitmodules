@@ -1,12 +1,16 @@
 [submodule "frontend"]
 	path = frontend
 	url = git@github.com:pre-msc-2027/frontend.git
+	branch = main
 [submodule "analyser"]
 	path = analyser
 	url = git@github.com:pre-msc-2027/analyser.git
+	branch = main
 [submodule "server"]
 	path = server
 	url = git@github.com:pre-msc-2027/api.git
+	branch = main
 [submodule "ai"]
 	path = ai
 	url = git@github.com:pre-msc-2027/ai.git
+	branch = main
