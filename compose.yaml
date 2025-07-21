@@ -20,6 +20,8 @@ services:
     build:
       context: ./server
       dockerfile: Dockerfile
+    environment:
+      env_file:
 
   frontend:
     build:
@@ -27,12 +29,14 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
+    environment:
+      env_file:
     networks:
       - traefik
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.frontend.rule=Host(`traefik.localhost`)"
-      - "traefik.http.services.frontend.loadbalancer.server.port=3000"
+      traefik.enable: true
+      traefik.http.routers.frontend.rule: Host(`secuscan.localhost`)
+      traefik.http.services.frontend.loadbalancer.server.port: 3000
 
 networks:
   traefik:
