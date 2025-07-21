@@ -1,95 +1,125 @@
-# 🎶 *Elle est tombée du ciel* - Gims
+# 🚀 SecuScan – CI/CD & Static Analysis for Frontend Applications
 
-Bienvenue dans l’univers magique de Gims ✨  
-Ce fichier contient les paroles de la chanson **"Elle est tombée du ciel"**  
-Prépare-toi pour un voyage entre rêve, magie et émotion 🚀🎩
+**SecuScan**
+---
+
+## 🧩 Key Features
+
+* **Static Code Analysis**: Catch bugs, enforce coding standards, and get actionable insights using our Java-powered analysis engine.
+* **Remote Deployment**: Push builds directly to your configured server(s).
+* **Multi-language Stack**:
+
+  * **Frontend**: React
+  * **Backend API**: Python (FastAPI / Flask / Django)
+  * **Static Analysis Engine**: Java CLI tool
 
 ---
 
-## 🌌 Refrain envoûtant
+## 📦 Tech Stack
 
-```
-Ciel, tu ne m'avais pas dit qu'c'était une magicienne
-Ça m'étonnerait pas qu'elle me fasse des siennes
-J'ai fait un cauchemar, j'étais à découvert
-J'ai retrouvé la vue dans le Ferrari vert
-Elle est tombée du ciel (ciel)
-Oui, c'est une magicienne ('cienne)
-Elle est tombée du ciel (ciel)
-Oh, oui
-```
+| Layer      | Technology                        |
+| ---------- | --------------------------------- |
+| Frontend   | React                             |
+| Backend    | Python (REST API)                 |
+| Analyzer   | Java CLI Tool                     |
+| Deployment | SSH / FTP / Docker / Custom       |
 
 ---
 
-## 💔 Amour et désillusions
+## 🚀 Getting Started
 
-```
-Tu lui dis que tu l'aimes mais c'est pour de faux
-T'as envie de changer le cours des choses
-T'as suivi ton âme au fin fond d'la fosse
-Aujourd'hui, t'as vu ton plus grand défaut
-C'est à dire que la vie n'est pas comme tu crois
-Ça veut dire que tout n'est qu'une question de choix
-C'est fini mais je garde les plus belles images
-Va leur dire que c'était une belle histoire
-```
+### Prerequisites
+
+* Git
+* Docker
 
 ---
 
-## 🌠 Magicienne toujours présente
+### 🛠️ Installation
 
-```
-Ciel, tu ne m'avais pas dit qu'c'était une magicienne
-Ça m'étonnerait pas qu'elle me fasse des siennes
-J'ai fait un cauchemar, j'étais à découvert
-J'ai retrouvé la vue dans le Ferrari vert
-Elle est tombée du ciel (ciel)
-Oui, c'est une magicienne ('cienne)
-Elle est tombée du ciel (ciel)
-Oh, oui (azonto)
+Clone the repo:
+
+```bash
+git clone https://github.com/your-org/secuscan.git
+cd secuscan
+docker compose up -d
 ```
 
 ---
 
-## 🌊 Entre mensonges et peur
+## ⚙️ Configuration
 
-```
-Tu me suis partout et même dans mes galères
-J't'ai menti le jour où on regardait la mer
-Y a plus rien à faire, vu les bouts de verre
-Hanté par les doutes et la peur de te perdre
-```
+Update your deployment targets in:
 
----
-
-## 🔥 Azonto Rythm
-
-```
-Azonto, azonto, azonto, azonto
-Azonto, azonto, azonto, azonto
-Eh azonto, azonto, azonto, azonto
-Azonto, azonto, azonto, azonto
+```bash
+config/deploy.config.json
 ```
 
----
+Example:
 
-## 🎩 Final Magique
-
-```
-Ciel, tu ne m'avais pas dit qu'c'était une magicienne
-Ça m'étonnerait pas qu'elle me fasse des siennes
-J'ai fait un cauchemar, j'étais à découvert
-J'ai retrouvé la vue dans le Ferrari vert
-Elle est tombée du ciel (ciel)
-Oui, c'est une magicienne ('cienne)
-Elle est tombée du ciel (ciel)
-Oh, oui (azonto)
-Baby vient d'tomber du ciel
-Oh, oui, c'est une magicienne
-Oh, oh, bébé tombée du ciel
-Oh, oui, c'est une magicienne
+```json
+{
+  "host": "your.remote.server",
+  "user": "deploy",
+  "path": "/var/www/your-app",
+  "method": "ssh"
+}
 ```
 
 ---
 
-> 🎧 *"Une chanson, une histoire, une magie... Elle est tombée du ciel."*
+## 📈 CI/CD Workflow
+
+1. **Push to Main**
+2. **Static Analysis via Analyzer CLI**
+3. **React App Build**
+4. **Upload Build to Remote Server**
+5. **API Health Check**
+
+GitHub Actions pipeline is available in `.github/workflows/deploy.yml`.
+
+---
+
+## 🧪 Static Analysis
+
+The analyzer scans for:
+
+* Code smells
+* Unused imports
+* Duplicate code
+* CSS-in-JS issues
+* Linting violations
+
+Run it manually:
+
+```bash
+java -jar analyzer.jar /path/to/your/react-app
+```
+
+---
+
+## 🧰 API Endpoints (Python Backend)
+
+Example endpoints:
+
+* `GET /status` – Health check
+* `POST /deploy` – Trigger deployment
+* `POST /analyze` – Trigger static analysis
+
+---
+
+## 📤 Deployment Options
+
+Supports:
+
+* SSH with password/key
+* Docker-based container deployment
+* Custom hooks for staging/production
+
+---
+
+## 👨‍💻 Development
+
+* Dev frontend: `npm start`
+* Dev backend: `uvicorn main:app --reload`
+* Watch analyzer: use IDE build tools or `./gradlew build --continuous`
