@@ -7,14 +7,14 @@ services:
       - "--entrypoints.web.address=:80"
     ports:
       - "80:80"
-      - "8080:8080"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
     networks:
-        - traefik
+      - traefik
     labels:
-      - "traefik.http.routers.dashboard.rule=Host(`traefik.localhost`)"
-      - "traefik.http.routers.dashboard.service=api@internal"
+      traefik.http.routers.dashboard.rule: Host(`traefik.localhost`)
+      traefik.http.routers.dashboard.service: api@internal
+      traefik.http.services.dashboard.loadbalancer.server.port: 8080
 
   server:
     build:
@@ -34,7 +34,5 @@ services:
       - "traefik.http.routers.frontend.rule=Host(`traefik.localhost`)"
       - "traefik.http.services.frontend.loadbalancer.server.port=3000"
 
-
 networks:
   traefik:
-
