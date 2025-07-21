@@ -10,7 +10,7 @@
 * **Multi-language Stack**:
 
   * **Frontend**: React
-  * **Backend API**: Python (FastAPI / Flask / Django)
+  * **Backend API**: Python (FastAPI)
   * **Static Analysis Engine**: Java CLI tool
 
 ---
@@ -68,18 +68,6 @@ Example:
 
 ---
 
-## 📈 CI/CD Workflow
-
-1. **Push to Main**
-2. **Static Analysis via Analyzer CLI**
-3. **React App Build**
-4. **Upload Build to Remote Server**
-5. **API Health Check**
-
-GitHub Actions pipeline is available in `.github/workflows/deploy.yml`.
-
----
-
 ## 🧪 Static Analysis
 
 The analyzer scans for:
@@ -89,33 +77,6 @@ The analyzer scans for:
 * Duplicate code
 * CSS-in-JS issues
 * Linting violations
-
-Run it manually:
-
-```bash
-java -jar analyzer.jar /path/to/your/react-app
-```
-
----
-
-## 🧰 API Endpoints (Python Backend)
-
-Example endpoints:
-
-* `GET /status` – Health check
-* `POST /deploy` – Trigger deployment
-* `POST /analyze` – Trigger static analysis
-
----
-
-## 📤 Deployment Options
-
-Supports:
-
-* SSH with password/key
-* Docker-based container deployment
-* Custom hooks for staging/production
-
 ---
 
 ## 👨‍💻 Development
