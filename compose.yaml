@@ -13,4 +13,4 @@ services:
     environment:
       API_URL: server
     ports:
-      - 3000:3000
+      - 5173:5173
