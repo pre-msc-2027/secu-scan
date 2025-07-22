@@ -1,42 +1,16 @@
 services:
-  traefik:
-    image: traefik:latest
-    command:
-      - "--api.insecure=true"
-      - "--providers.docker=true"
-      - "--entrypoints.web.address=:80"
-    ports:
-      - "80:80"
-    volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
-    networks:
-      - traefik
-    labels:
-      traefik.http.routers.dashboard.rule: Host(`traefik.localhost`)
-      traefik.http.routers.dashboard.service: api@internal
-      traefik.http.services.dashboard.loadbalancer.server.port: 8080
-
   server:
     build:
       context: ./server
       dockerfile: Dockerfile
     environment:
-      env_file:
+      env_file: .env
 
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    ports:
-      - "3000:3000"
     environment:
-      env_file:
-    networks:
-      - traefik
-    labels:
-      traefik.enable: true
-      traefik.http.routers.frontend.rule: Host(`secuscan.localhost`)
-      traefik.http.services.frontend.loadbalancer.server.port: 3000
-
-networks:
-  traefik:
+      API_URL: server
+    ports:
+      - 3000:3000
