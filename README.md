@@ -19,6 +19,7 @@ Clone the repo:
 ```bash
 git clone https://github.com/your-org/secuscan.git
 cd secuscan
+git submodule init
 git submodule update --recursive --remote
 docker compose up -d
 ```
