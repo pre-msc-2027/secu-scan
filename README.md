@@ -3,29 +3,6 @@
 **SecuScan**
 ---
 
-## 🧩 Key Features
-
-* **Static Code Analysis**: Catch bugs, enforce coding standards, and get actionable insights using our Java-powered analysis engine.
-* **Remote Deployment**: Push builds directly to your configured server(s).
-* **Multi-language Stack**:
-
-  * **Frontend**: React
-  * **Backend API**: Python (FastAPI)
-  * **Static Analysis Engine**: Java CLI tool
-
----
-
-## 📦 Tech Stack
-
-| Layer      | Technology                        |
-| ---------- | --------------------------------- |
-| Frontend   | React                             |
-| Backend    | Python (REST API)                 |
-| Analyzer   | Java CLI Tool                     |
-| Deployment | SSH / FTP / Docker / Custom       |
-
----
-
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -48,25 +25,16 @@ docker compose up -d
 
 ---
 
-## ⚙️ Configuration
+## 📦 Tech Stack
 
-Update your deployment targets in:
+| Layer      | Technology                        |
+| ---------- | --------------------------------- |
+| Frontend   | React                             |
+| Backend    | Python (REST API)                 |
+| Analyzer   | Java CLI Tool                     |
+| Deployment | SSH / FTP / Docker / Custom       |
 
-```bash
-config/deploy.config.json
-```
-
-Example:
-
-```json
-{
-  "host": "your.remote.server",
-  "user": "deploy",
-  "path": "/var/www/your-app",
-  "method": "ssh"
-}
-```
-
+---
 ---
 
 ## 🧪 Static Analysis
