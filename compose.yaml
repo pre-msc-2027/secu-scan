@@ -4,9 +4,6 @@ services:
     build:
       context: ./server
       dockerfile: Dockerfile
-    environment:
-      MONGODB_URI: mongodb://root:example@mongo:27017/
-      MONGO_DBNAME: secuscan
     env_file:
       - ".env"
 
